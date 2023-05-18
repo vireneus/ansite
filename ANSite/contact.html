@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Связь со мной</title>
+	<style>
+        body {
+            background-color: #303030;
+        }
+
+    </style>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+
+	<!-- Nav -->
+	<nav id="nav">
+		<ul class="container">
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="portfolio.php">Портфолио</a></li>
+			<li><a href="contact.html">Связь со мной</a></li>
+		</ul>
+	</nav>
+
+	<!-- Contact -->
+	<div class="wrapper style4">
+		<article id="contact" class="container 75%">
+			<div>
+				<div class="row">
+					<div class="12u">
+						<form id="mainform" method="post" action="#">
+							<div>
+								<div class="row">
+									<div class="6u 12u(mobile)">
+										<input type="text" name="name" id="name" placeholder="Ваше имя" />
+									</div>
+									<div class="6u 12u(mobile)">
+										<input type="text" name="email" id="email" placeholder="Ваша почта" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="12u">
+										<input type="text" name="subject" id="subject" placeholder="Тема сообщения" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="12u">
+										<textarea name="message" id="message" placeholder="Сообщение"></textarea>
+									</div>
+								</div>
+								<div class="row 200%">
+									<div class="12u">
+										<ul class="actions">
+											<li><input type="button" id="sendMail" value="Отправить сообщение" /></li>
+											<li><input type="reset" value="Очистить форму" class="alt" /></li>
+										</ul>
+									</div>
+
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div id="errorMess" style="text-align: center; color:white;"></div>
+
+			<br>
+			<footer>
+				<ul id="copyright" style="color: white;">
+					<li>tsu@mail.com</li>
+					<li>+7-900-000-00-00</a></li><br><br>
+					<li>Страница создана исключительно для ознакомления в учебных целях</li>
+				</ul>
+			</footer>
+		</article>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<script src="assets/js/formMail.js"></script>
+</body>
+
+</html>
