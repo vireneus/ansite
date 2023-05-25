@@ -6,8 +6,9 @@ require_once '../connect/connect.php';
 session_start();
 
 // Получаем логин и пароль из формы авторизации
-$login=$_POST["login"];
-$password=$_POST["password"];
+// Функция htmlspecialchars используется для защиты от внедрения вредоносного кода через специальные символы HTML
+$login=htmlspecialchars($_POST["login"]);
+$password=htmlspecialchars($_POST["password"]);
 
 // Подготавливаем запрос на выборку пользователя из базы данных по логину и паролю
 $sql=$pdo->prepare("SELECT id, login FROM user WHERE login=:login AND password=:password");
