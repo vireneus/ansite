@@ -15,7 +15,14 @@ require_once 'connect/connect.php';
 	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
+
 <body>
+
+	<style>
+		.nicEdit-selectContain {
+			line-height: initial;
+		}
+	</style>
 
 	<!-- Nav -->
 	<nav id="nav">
@@ -23,7 +30,6 @@ require_once 'connect/connect.php';
 			<li><a href="index.html">Главная</a></li>
 			<li><a href="portfolio.php">Портфолио</a></li>
 			<li><a href="contact.html">Связь со мной</a></li>
-			<li><a href="/logout.php">Выход</a></li>
 		</ul>
 	</nav>
 
@@ -35,12 +41,14 @@ require_once 'connect/connect.php';
 
 
 	<?php if (!empty($_SESSION["login"])): ?>
-
+		<script src="nicEdit.js" type="text/javascript"></script>
+		<script type="text/javascript">bkLib.onDomLoaded(function () { nicEditors.allTextAreas() });</script>
 		<h3 style="text-align: center">Добавить новую работу в портфолио:</h3>
 		<form action="admin/create.php" method="post" style="margin: 0 25% 0 25%; text-align: center;">
 			<input type="text" name="name" placeholder="Название" style="color: black;"><br>
 			<input type="text" name="image" placeholder="Ссылка на картинку" style="color: black;"><br>
-			<textarea name="description" placeholder="Описание" style="color: black;"></textarea><br>
+			<input type="text" name="shortdescription" placeholder="Краткое описание" style="color: black;"><br>
+			<textarea style name="description" placeholder="Описание" style="color: black; width: 100%;"></textarea><br>
 			<button type="submit">Добавить</button>
 		</form>
 

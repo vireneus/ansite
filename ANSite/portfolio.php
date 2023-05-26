@@ -50,8 +50,9 @@
 	 * Перебираем массив и рендерим HTML с данными из массива
 	 * Ключ 0 - id
 	 * Ключ 1 - name
-	 * Ключ 2 - description
-	 * Ключ 3 - image
+	 * Ключ 2 - shortdescription
+	 * Ключ 3 - description
+	 * Ключ 4 - image
 	 */
 
 
@@ -65,7 +66,7 @@
 					<? foreach ($cards as $card): ?>
 						<div class="4u 12u(mobile)" data-id="<?= $card[0] ?>">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="<?= $card[3] ?>" alt="" /></a>
+								<a href="#" class="image featured"><img src="<?= $card[4] ?>" alt="" /></a>
 								<h3><a href="view.php?id=<?= $card[0] ?>"><?= $card[1] ?></a></h3>
 								<p class="clip">
 									<?= $card[2] ?>

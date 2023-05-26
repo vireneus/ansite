@@ -52,13 +52,18 @@ $comments = mysqli_fetch_all($comments);
 
 <body>
 
+    <style>
+        .nicEdit-selectContain {
+            line-height: initial;
+        }
+    </style>
+
     <!-- Nav -->
     <nav id="nav">
         <ul class="container">
             <li><a href="index.html">Главная</a></li>
             <li><a href="portfolio.php">Портфолио</a></li>
             <li><a href="contact.html">Связь со мной</a></li>
-            <li><a href="/logout.php">Выход</a></li>
         </ul>
     </nav>
 
@@ -69,7 +74,8 @@ $comments = mysqli_fetch_all($comments);
     <br>
 
     <?php if (!empty($_SESSION["login"])): ?>
-
+        <script src="nicEdit.js" type="text/javascript"></script>
+        <script type="text/javascript">bkLib.onDomLoaded(function () { nicEditors.allTextAreas() });</script>
         <h3 style="text-align: center">Изменить работу в портфолио:</h3>
         <form action="admin/update.php" method="post" style="margin: 0 25% 0 25%; text-align: center;">
             <input type="hidden" name="id" value="<?= $card['id'] ?>">
@@ -77,6 +83,8 @@ $comments = mysqli_fetch_all($comments);
                 value="<?= $card['name'] ?>"><br>
             <input type="text" name="image" placeholder="Новая ссылка на картинку" style="color: black;"
                 value="<?= $card['image'] ?>"><br>
+            <input type="text" name="shortdescription" placeholder="Новое краткое описание" style="color: black;"
+                value="<?= $card['shortdescription'] ?>"><br>
             <textarea name="description" placeholder="Новое описание"
                 style="color: black;"><?= $card['description'] ?></textarea><br>
             <textarea name="body" placeholder="Изменить комментарий"

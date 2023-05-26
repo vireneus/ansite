@@ -6,19 +6,19 @@ $("#sendMail").on("click", function () {
     var message = $("#message").val().trim();
 
     // Проверяем заполненность полей и выводим сообщение об ошибке, если не все поля заполнены
-    if(name == "") {
+    if (name == "") {
         $("#errorMess").text("Введите Имя!");
         return false;
     }
-    else if(email == "") {
+    else if (email == "") {
         $("#errorMess").text("Введите Email!");
         return false;
     }
-    else if(subject == "") {
+    else if (subject == "") {
         $("#errorMess").text("Введите Тему письма!");
         return false;
     }
-    else if(message.length < 5) {
+    else if (message.length < 5) {
         $("#errorMess").text("Введите Сообщение не менее 5 символов!");
         return false;
     }
@@ -30,20 +30,20 @@ $("#sendMail").on("click", function () {
         url: 'assets/php/mail.php',
         type: 'POST',
         cache: false,
-        data: {'name':name, 'email': email, 'subject': subject, 'message': message},
+        data: { 'name': name, 'email': email, 'subject': subject, 'message': message },
         dataType: 'html',
-        beforeSend: function() {
+        beforeSend: function () {
             // Блокируем кнопку отправки на время выполнения запроса
             $("#sendMail").prop("disabled", true);
         },
         success: function (data) {
             // Выводим сообщение об успешной или неудачной отправке письма
-            if(!data)
+            if (!data)
                 alert("Были ошибки, сообщение не отправлено!");
             else
                 alert("Сообщение успешно отправлено!");
             // Очищаем поля формы
-            $("#mainform").trigger("reset");  
+            $("#mainform").trigger("reset");
             // Разблокируем кнопку отправки
             $("#sendMail").prop("disabled", false);
         }
